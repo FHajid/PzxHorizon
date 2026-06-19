@@ -14,7 +14,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #0E1528;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -35,4 +35,45 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/* Animasi meluncur diagonal dari atas-kiri ke kanan-bawah */
+@keyframes kilatDiagonal {
+  0% {
+    transform: translate(-100%, -100%);
+  }
+  15% {
+    transform: translate(100%, 100%);
+  }
+  100% {
+    transform: translate(100%, 100%); /* Sisa waktu panjang digunakan untuk jeda diam */
+  }
+}
+
+.kontainer-logo-blend {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Garis cahaya emas miring diagonal */
+.cahaya-diagonal {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  z-index: 20;
+  pointer-events: none;
+  background: linear-gradient(
+    135deg, /* Sudut kemiringan diagonal dari atas-kiri ke kanan-bawah */
+    transparent,
+    rgba(226, 168, 98, 0.6) 50%, /* Warna emas PZX dibuat lebih tegas sedikit agar blend-nya pas */
+    transparent
+  );
+  /* Total durasi 7 detik, meluncur instan di awal, lalu diam lama */
+  animation: kilatDiagonal 7s infinite ease-in-out;
+  /* Kunci sakti agar cahaya menyatu lembut murni dengan warna logomu */
+  mix-blend-mode: color-dodge; 
 }

@@ -1,25 +1,34 @@
-import logo from './logo.svg';
 import './App.css';
-import Navbar from './components/navbar'; // 1. Ubah n menjadi kapital 'Navbar'
+import Navbar from './components/navbar'; 
+import Hero from './components/hero.js';
+import Features from './components/features.js';
+import SystemSpecs from './components/systemspec.js';
+import Footer from './components/footer.js';
+import Contact from './components/contact.js';
+import Comparison from './components/comparison.js';
+import WhyChoose from './components/why-choose-us.js';
+import ProductSpecs from './components/productspec.js';
+import OurBrand from './components/brand.js';
 
 function App() {
   return (
     <div className="App">
-      <Navbar /> {/* 2. Ubah menjadi <Navbar /> dengan huruf kapital */}
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          LOL Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar /> 
+
+      <main>
+
+        <Hero /> 
+        <Features />
+        <Comparison />
+        <ProductSpecs />
+        <WhyChoose />
+        <SystemSpecs />        
+        <OurBrand />
+        <Contact />
+        
+        <Footer />
+
+      </main>
     </div>
   );
 }
