@@ -3,7 +3,7 @@ import LogoPzx from '../assets/logo-Pzx.png'
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden py-20 lg:py-32 bg-[#0E1528]">
+    <section id="hero" className="relative overflow-hidden py-20 lg:py-32 bg-[#0E1528]">
       {/* Efek Gradasi Latar Belakang Halus (Ambient Glow) */}
       <div className="absolute top-0 right-1/4 -z-10 h-[400px] w-[400px] rounded-full bg-blue-500/10 blur-[120px]" />
       <div className="absolute top-20 left-1/3 -z-10 h-[300px] w-[300px] rounded-full bg-[#e2a862]/5 blur-[200px]" />

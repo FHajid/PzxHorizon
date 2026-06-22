@@ -18,7 +18,7 @@ export default function Features() {
   ];
 
   return (
-    <section className="relative py-20 lg:py-28 border-t border-white/5 bg-[#0E1528]">
+    <section className="relative overflow-hidden py-20 lg:py-28 border-t border-white/5 bg-[#0E1528]">
       {/* Efek sorot lampu ambient haluss di latar belakang */}
       <div className="absolute bottom-0 left-1/4 -z-10 h-[350px] w-[350px] rounded-full bg-blue-600/5 blur-[100px]" />
 

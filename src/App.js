@@ -20,8 +20,9 @@ function App() {
         <Hero /> 
         <Features />
         <Comparison />
-        <ProductSpecs />
+        
         <WhyChoose />
+        <ProductSpecs />
         <SystemSpecs />        
         <OurBrand />
         <Contact />
