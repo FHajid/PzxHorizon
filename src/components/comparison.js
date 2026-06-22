@@ -11,8 +11,8 @@ export default function Comparison() {
   ];
 
   return (
-    <section id="comparison" className="relative py-20 lg:py-28 border-t border-white/5 bg-[#060910] overflow-hidden">
-      {/* Efek kilauan ambient background */}
+    <section id="comparison" className="relative py-20 lg:py-28 border-t border-white/5 bg-[#0E1528] overflow-hidden">
+
       <div className="absolute top-1/2 left-1/2 -z-10 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#e2a862]/5 blur-[120px]" />
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -33,7 +33,29 @@ export default function Comparison() {
         {/* 3-COLUMN CARD SYSTEM (RESPONSIVE GRID) */}
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3 items-stretch">
           
-          {/* KOLOM 1: PZX HORIZON (JUARA UTAMA - GLOWING GOLD) */}
+          
+
+          {/* KOLOM 1: SATELLITE (DARK & MUTED) */}
+          <div className="rounded-2xl border border-white/5 bg-[#0b111e]/40 p-8 flex flex-col justify-between transition-colors duration-300 hover:border-white/10">
+            <div>
+              <div className="text-center pb-6 border-b border-white/5">
+                <h3 className="text-xl font-bold tracking-wide text-gray-300">SATELLITE</h3>
+                <p className="text-xs text-gray-500 mt-1">Deep Sea / Offshore</p>
+              </div>
+
+              {/* Data Detail Satellite */}
+              <div className="mt-6 space-y-5 text-left">
+                {specs.map((spec, i) => (
+                  <div key={i} className="border-b border-white/[0.03] pb-3 last:border-0">
+                    <span className="block text-[11px] font-semibold text-gray-600 uppercase tracking-wider">{spec.label}</span>
+                    <span className="text-sm font-medium text-gray-400 mt-0.5 block">{spec.satellite}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* KOLOM 2: PZX HORIZON (JUARA UTAMA - GLOWING GOLD) */}
           <div className="relative rounded-2xl border-2 border-[#e2a862] bg-[#0E1528] p-8 shadow-[0_0_40px_rgba(226,168,98,0.15)] flex flex-col justify-between transition-transform duration-300 hover:scale-[1.02]">
             {/* Tag / Badge Pemenang */}
             <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#e2a862] px-4 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider text-[#060910]">
@@ -52,26 +74,6 @@ export default function Comparison() {
                   <div key={i} className="border-b border-white/[0.03] pb-3 last:border-0">
                     <span className="block text-[11px] font-bold text-gray-500 uppercase tracking-wider">{spec.label}</span>
                     <span className="text-sm font-bold text-white mt-0.5 block">{spec.pzx}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* KOLOM 2: SATELLITE (DARK & MUTED) */}
-          <div className="rounded-2xl border border-white/5 bg-[#0b111e]/40 p-8 flex flex-col justify-between transition-colors duration-300 hover:border-white/10">
-            <div>
-              <div className="text-center pb-6 border-b border-white/5">
-                <h3 className="text-xl font-bold tracking-wide text-gray-300">SATELLITE</h3>
-                <p className="text-xs text-gray-500 mt-1">Deep Sea / Offshore</p>
-              </div>
-
-              {/* Data Detail Satellite */}
-              <div className="mt-6 space-y-5 text-left">
-                {specs.map((spec, i) => (
-                  <div key={i} className="border-b border-white/[0.03] pb-3 last:border-0">
-                    <span className="block text-[11px] font-semibold text-gray-600 uppercase tracking-wider">{spec.label}</span>
-                    <span className="text-sm font-medium text-gray-400 mt-0.5 block">{spec.satellite}</span>
                   </div>
                 ))}
               </div>

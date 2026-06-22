@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function OurBrand() {
   return (
-    <section id="mission-vision" className="relative py-24 lg:py-32 border-t border-white/5 bg-[#060910] overflow-hidden">
+    <section id="mission-vision" className="relative py-24 lg:py-32 border-t border-white/5 bg-[#0E1528] overflow-hidden">
       {/* Pendaran ambient emas lembut di sudut kanan untuk estetika */}
       <div className="absolute top-1/4 right-1/4 -z-10 h-[400px] w-[400px] rounded-full bg-[#e2a862]/5 blur-[130px]" />
       <div className="absolute bottom-1/4 left-1/4 -z-10 h-[300px] w-[300px] rounded-full bg-blue-500/[0.03] blur-[100px]" />

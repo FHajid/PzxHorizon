@@ -12,7 +12,7 @@ export default function ProductSpecs() {
   ];
 
   return (
-    <section id="product-specs" className="relative py-20 lg:py-28 border-t border-white/5 bg-[#060910] overflow-hidden">
+    <section id="product-specs" className="relative py-20 lg:py-28 border-t border-white/5 bg-[#0E1528] overflow-hidden">
       {/* Efek pendaran lampu ambient di sudut kanan bawah */}
       <div className="absolute -bottom-20 -right-20 -z-10 h-[350px] w-[350px] rounded-full bg-[#e2a862]/5 blur-[100px]" />
 

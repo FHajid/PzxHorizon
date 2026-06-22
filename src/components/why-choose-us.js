@@ -4,7 +4,7 @@ export default function WhyChoose() {
   // Poin-poin performa yang diekstrak dari kata-katamu
 
   return (
-    <section id="why-choose-us" className="relative py-20 lg:py-28 border-t border-white/5 bg-[#111B29] overflow-hidden">
+    <section id="why-choose-us" className="relative py-20 lg:py-28 border-t border-white/5 bg-[#0E1528] overflow-hidden">
       {/* Ambient soft glow di bagian bawah seksi */}
       <div className="absolute bottom-0 right-1/3 -z-10 h-[400px] w-[400px] rounded-full bg-blue-500/[0.03] blur-[120px]" />
 
