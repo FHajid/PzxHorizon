@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/PzxHorizon/static/css/main.57efd3b6.css",
-    "main.js": "/PzxHorizon/static/js/main.a2c7f5ef.js",
+    "main.css": "/PzxHorizon/static/css/main.409411c9.css",
+    "main.js": "/PzxHorizon/static/js/main.67499ff3.js",
     "static/js/453.d4c49667.chunk.js": "/PzxHorizon/static/js/453.d4c49667.chunk.js",
     "static/media/logo-Pzx.png": "/PzxHorizon/static/media/logo-Pzx.89b08e813ed37ce5ca47.png",
     "index.html": "/PzxHorizon/index.html",
-    "main.57efd3b6.css.map": "/PzxHorizon/static/css/main.57efd3b6.css.map",
-    "main.a2c7f5ef.js.map": "/PzxHorizon/static/js/main.a2c7f5ef.js.map",
+    "main.409411c9.css.map": "/PzxHorizon/static/css/main.409411c9.css.map",
+    "main.67499ff3.js.map": "/PzxHorizon/static/js/main.67499ff3.js.map",
     "453.d4c49667.chunk.js.map": "/PzxHorizon/static/js/453.d4c49667.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.57efd3b6.css",
-    "static/js/main.a2c7f5ef.js"
+    "static/css/main.409411c9.css",
+    "static/js/main.67499ff3.js"
   ]
 }
