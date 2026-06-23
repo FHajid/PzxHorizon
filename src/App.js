@@ -1,4 +1,5 @@
 import './App.css';
+
 import Navbar from './components/navbar'; 
 import Hero from './components/hero.js';
 import Features from './components/features.js';

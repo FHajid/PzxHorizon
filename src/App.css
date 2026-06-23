@@ -2,82 +2,90 @@
   text-align: center;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
-.App-header {
-  background-color: #0E1528;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+/* ==========================================================================
+   ANIMASI GLOWING PREMIUM UNTUK LOGO PZX (Taruh di src/App.css)
+   ========================================================================== */
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-/* Animasi meluncur diagonal dari atas-kiri ke kanan-bawah */
-@keyframes kilatDiagonal {
-  0% {
-    transform: translate(-100%, -100%);
-  }
-  15% {
-    transform: translate(100%, 100%);
-  }
-  100% {
-    transform: translate(100%, 100%); /* Sisa waktu panjang digunakan untuk jeda diam */
-  }
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-.kontainer-logo-blend {
+/* 1. Efek Logo Bernapas & Memancarkan Cahaya Emas */
+/* Kontainer Utama Logo */
+.pzx-logo-container {
   position: relative;
   display: inline-flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 
-/* Garis cahaya emas miring diagonal */
-.cahaya-diagonal {
+/* Logo Dasar PZX dengan Bayangan Pendar Statis */
+.pzx-logo-base {
+  filter: drop-shadow(0 0 20px rgba(226, 168, 98, 0.35));
+  position: relative;
+  z-index: 10;
+}
+
+/* KUNCI UTAMA: Lapisan Kilatan Cahaya yang Terkunci di Dalam Siluet Logo */
+.pzx-logo-overlay {
   position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   z-index: 20;
   pointer-events: none;
+  
+  /* Membaca bentuk asli Logo PZX sebagai topeng (mask) */
+  -webkit-mask-image: url('./assets/logo-Pzx.png');
+  mask-image: url('./assets/logo-Pzx.png');
+  
+  /* Memastikan ukuran topeng pas dengan ukuran box */
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+}
+
+/* Efek Kilatan Garis yang Meluncur di Dalam Topeng */
+.pzx-logo-overlay::after {
+  content: '';
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  width: 300%;
+  height: 300%;
+
+  /* Garis kilatan miring 135 derajat (Putih-Emas Lembut) */
   background: linear-gradient(
-    135deg, /* Sudut kemiringan diagonal dari atas-kiri ke kanan-bawah */
-    transparent,
-    rgba(226, 168, 98, 0.6) 50%, /* Warna emas PZX dibuat lebih tegas sedikit agar blend-nya pas */
-    transparent
+    135deg,
+    rgba(255, 255, 255, 0) 40%,
+    rgba(255, 255, 255, 0.6) 48%,
+    rgba(226, 168, 98, 0.5) 52%,
+    rgba(255, 255, 255, 0) 60%
   );
-  /* Total durasi 7 detik, meluncur instan di awal, lalu diam lama */
-  animation: kilatDiagonal 7s infinite ease-in-out;
-  /* Kunci sakti agar cahaya menyatu lembut murni dengan warna logomu */
-  mix-blend-mode: color-dodge; 
+
+  /* Menghaluskan pinggiran garis kilatan biar estetik */
+  filter: blur(6px);
+
+  /* Animasi meluncur lambat mewah (durasi 5 detik) */
+  animation: meluncurKinclongMurni 5s cubic-bezier(0.8, 1, 0.8, 0.3) infinite;
+}
+
+/* Koordinat pergerakan dari pojok atas kiri ke bawah kanan */
+@keyframes meluncurKinclongMurni {
+  0% {
+    transform: translate(-25%, -25%);
+  }
+  35%, 100% {
+    transform: translate(35%, 35%);
+  }
 }

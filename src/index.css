@@ -1,6 +1,8 @@
+/* stylelint-disable at-rule-no-unknown */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* stylelint-enable at-rule-no-unknown */
 
 html {
   scroll-behavior: smooth;
@@ -18,4 +20,33 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+/* Taruh di paling bawah src/index.css */
+
+.animate-orb-satu {
+  animation: putarOrbSatu 8s ease-in-out infinite;
+}
+
+.animate-orb-dua {
+  animation: putarOrbDua 6s ease-in-out infinite;
+}
+
+@keyframes putarOrbSatu {
+  0%, 100% {
+    transform: translate(-20px, -20px) scale(1);
+  }
+  50% {
+    transform: translate(20px, 20px) scale(1.2);
+    background-color: rgba(226, 168, 98, 0.15);
+  }
+}
+
+@keyframes putarOrbDua {
+  0%, 100% {
+    transform: translate(15px, -15px) scale(1.1);
+  }
+  50% {
+    transform: translate(-15px, 15px) scale(0.9);
+  }
 }

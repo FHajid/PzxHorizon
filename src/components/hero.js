@@ -51,29 +51,33 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* SISI KANAN: EMBEDDED BLENDED DIAGONAL GLOW */}
+                    {/* SISI KANAN: SEAMLESS KINCLONG LOGO BOX */}
           <div className="flex justify-center lg:justify-end">
+            {/* Kartu Kaca Utama */}
             <div className="relative flex h-[350px] w-[350px] sm:h-[400px] sm:w-[400px] items-center justify-center rounded-3xl border border-white/5 bg-gradient-to-br from-white/[0.02] to-transparent p-8 shadow-2xl backdrop-blur-sm">
               
-              {/* Pendaran ambient halus di luar logo */}
-              <div className="absolute h-48 w-48 rounded-full bg-[#e2a862]/5 blur-[80px]" />
+              {/* Pendaran Ambient Statis Lembut di Belakang Logo */}
+              <div className="absolute h-44 w-44 rounded-full bg-[#e2a862]/10 blur-[60px] pointer-events-none" />
 
-              {/* Pembungkus Logo dengan Efek Blending */}
-              <div className="kontainer-logo-blend overflow-hidden rounded-2xl p-4">
+              {/* Wadah Utama Logo PZX */}
+              <div className="pzx-logo-container transition-transform duration-500 hover:scale-105">
                 
-                {/* Garis cahaya diagonal yang meluncur melayang di atas logo */}
-                <div className="cahaya-diagonal" />
-                
-                {/* Logo PZX Utama */}
+                {/* 1. Logo Dasar yang Dilihat User */}
                 <img 
                   src={LogoPzx} 
                   alt="PZX Horizon Logo" 
-                  className="w-48 sm:w-56 h-auto object-contain block relative z-10 drop-shadow-[0_0_15px_rgba(226,168,98,0.3)]" 
+                  className="w-48 sm:w-56 h-auto object-contain block pzx-logo-base" 
                 />
+
+                {/* 2. Lapisan Cahaya yang Dikunci Hanya di Dalam Piksel Logo (MASKING) */}
+                <div className="pzx-logo-overlay" />
+
               </div>
 
             </div>
           </div>
+
+
 
         </div>
       </div>
