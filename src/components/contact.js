@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Contact() {
   return (
-    <section id="contact" className="relative py-24 lg:py-32 border-t border-white/5 bg-[#0E1528] overflow-hidden">
+    <section id="contact" className="relative py-24 lg:py-32 border-t border-white/5 bg-transparent overflow-hidden">
       {/* Efek pendaran cahaya biru-emas halus di latar belakang */}
       <div className="absolute top-1/4 left-1/4 -z-10 h-[350px] w-[350px] rounded-full bg-blue-500/[0.02] blur-[120px]" />
       <div className="absolute bottom-1/4 right-1/4 -z-10 h-[350px] w-[350px] rounded-full bg-[#e2a862]/[0.02] blur-[120px]" />

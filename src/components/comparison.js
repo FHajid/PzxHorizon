@@ -11,7 +11,7 @@ export default function Comparison() {
   ];
 
   return (
-    <section id="comparison" className="relative py-20 lg:py-28 border-t border-white/5 bg-[#0E1528] overflow-hidden">
+    <section id="comparison" className="relative py-20 lg:py-28 border-t border-white/5 bg-transparent overflow-hidden">
 
       <div className="absolute top-1/2 left-1/2 -z-10 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#e2a862]/5 blur-[120px]" />
 
@@ -30,13 +30,12 @@ export default function Comparison() {
           </p>
         </div>
 
-        {/* 3-COLUMN CARD SYSTEM (RESPONSIVE GRID) */}
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-3 items-stretch">
+        {/* 🛠️ KUNCI UTAMA: Ditambahkan class 'group/matrix' pada pembungkus grid */}
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-3 items-stretch group/matrix">
           
-          
-
           {/* KOLOM 1: SATELLITE (DARK & MUTED) */}
-          <div className="rounded-2xl border border-white/5 bg-[#0b111e]/40 p-8 flex flex-col justify-between transition-colors duration-300 hover:border-white/10">
+          {/* Efek: Otomatis redup jika grid di-hover (group-hover/matrix:opacity-40), tapi menyala penuh jika dirinya sendiri di-hover (hover:!opacity-100) */}
+          <div className="rounded-2xl border border-white/5 bg-[#0b111e]/40 p-8 flex flex-col justify-between transition-all duration-300 group-hover/matrix:opacity-40 hover:!opacity-100 hover:border-white/20 hover:scale-[1.01]">
             <div>
               <div className="text-center pb-6 border-b border-white/5">
                 <h3 className="text-xl font-bold tracking-wide text-gray-300">SATELLITE</h3>
@@ -56,9 +55,10 @@ export default function Comparison() {
           </div>
 
           {/* KOLOM 2: PZX HORIZON (JUARA UTAMA - GLOWING GOLD) */}
-          <div className="relative rounded-2xl border-2 border-[#e2a862] bg-[#0E1528] p-8 shadow-[0_0_40px_rgba(226,168,98,0.15)] flex flex-col justify-between transition-transform duration-300 hover:scale-[1.02]">
+          {/* Efek: Ditambahkan class '.pzx-featured-card' dari App.css untuk animasi bernapas otomatis */}
+          <div className="pzx-featured-card relative rounded-2xl border-2 border-[#e2a862] bg-[#0E1528] p-8 flex flex-col justify-between transition-all duration-300 group-hover/matrix:opacity-50 hover:!opacity-100 hover:scale-[1.03] z-10">
             {/* Tag / Badge Pemenang */}
-            <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#e2a862] px-4 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider text-[#060910]">
+            <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#e2a862] px-4 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider text-[#060910] shadow-md">
               The Coast Specialist
             </div>
 
@@ -81,7 +81,7 @@ export default function Comparison() {
           </div>
 
           {/* KOLOM 3: CELLULAR MARINE (DARK & MUTED) */}
-          <div className="rounded-2xl border border-white/5 bg-[#0b111e]/40 p-8 flex flex-col justify-between transition-colors duration-300 hover:border-white/10">
+          <div className="rounded-2xl border border-white/5 bg-[#0b111e]/40 p-8 flex flex-col justify-between transition-all duration-300 group-hover/matrix:opacity-40 hover:!opacity-100 hover:border-white/20 hover:scale-[1.01]">
             <div>
               <div className="text-center pb-6 border-b border-white/5">
                 <h3 className="text-xl font-bold tracking-wide text-gray-300">CELLULAR MARINE</h3>

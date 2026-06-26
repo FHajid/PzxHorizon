@@ -1,31 +1,56 @@
 import React from 'react';
 
 export default function Features() {
-  // Data kartu disesuaikan dengan teks yang ada di gambar contoh PZX
-  const featuresData = [
+  // Data kartu disesuaikan dengan teks operasional PZX dan grafik kustom
+  const features = [
     {
       title: "Landfall",
-      description: "Use our system for landfall. Most ships do their business on arrival and departure. That is where we operate."
+      description: "Use our system for landfall. Most ships do their business on arrival and departure. That is where we operate.",
+      // Grafik 1: Garis Sinyal Cakrawala Bersilangan (Radar Lock)
+      graphic: (
+        <div className="relative w-full h-full flex items-center justify-center">
+          <div className="absolute w-7 h-[2px] bg-[#e2a862] rotate-45 transform transition-all duration-500 group-hover:rotate-90" />
+          <div className="absolute w-7 h-[2px] bg-[#e2a862]/30 -rotate-45 transform transition-all duration-500 group-hover:rotate-0" />
+          <div className="w-2 h-2 rounded-full bg-white shadow-[0_0_8px_#fff]" />
+        </div>
+      )
     },
     {
       title: "Arrival & Departure",
-      description: "When arriving or departing port, nothing matches our performance."
+      description: "When arriving or departing port, nothing matches our performance.",
+      // Grafik 2: Perisai Kotak Berlapis (Layered Port Anchor Tech)
+      graphic: (
+        <div className="relative w-full h-full flex items-center justify-center">
+          <div className="absolute w-6 h-6 border border-[#e2a862]/40 rounded-md transform rotate-45 group-hover:scale-110 group-hover:border-[#e2a862] transition-all duration-300" />
+          <div className="absolute w-4 h-4 border border-dashed border-white/20 rounded-sm transform -rotate-45" />
+          <div className="w-1.5 h-1.5 rounded-full bg-[#e2a862]" />
+        </div>
+      )
     },
     {
       title: "Waypoint Coasting",
-      description: "Along the coast, we keep you connected."
+      description: "Along the coast, we keep you connected.",
+      // Grafik 3: Pulsa Data Konsentris (Signal Waves)
+      graphic: (
+        <div className="relative w-full h-full flex items-center justify-center space-x-1">
+          <div className="w-[3px] h-3 bg-white/20 rounded-full group-hover:h-5 group-hover:bg-[#e2a862] transition-all duration-300" />
+          <div className="w-[3px] h-5 bg-[#e2a862] rounded-full group-hover:h-3 transition-all duration-300" />
+          <div className="w-[3px] h-4 bg-white/40 rounded-full group-hover:h-6 group-hover:bg-[#e2a862] transition-all duration-300" />
+          <div className="w-[3px] h-2 bg-white/10 rounded-full group-hover:h-4 transition-all duration-300" />
+        </div>
+      )
     }
   ];
 
   return (
-    <section className="relative overflow-hidden py-20 lg:py-28 border-t border-white/5 bg-[#0E1528]">
-      {/* Efek sorot lampu ambient haluss di latar belakang */}
+    <section className="relative overflow-hidden py-20 lg:py-28 border-t border-white/5 bg-transparent">
+      {/* Efek sorot lampu ambient halus di latar belakang */}
       <div className="absolute bottom-0 left-1/4 -z-10 h-[350px] w-[350px] rounded-full bg-blue-600/5 blur-[100px]" />
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         
         {/* BAGIAN JUDUL UTAMA SECTION */}
-        <div className="flex flex-col space-y-4 mb-16 text-left max-w-3xl">
+        <div className="flex flex-col space-y-4 mb-12 text-left max-w-3xl">
           {/* Sub-judul Kecil */}
           <span className="text-xs font-bold tracking-[0.2em] text-[#e2a862] uppercase">
             Operational Truth
@@ -45,24 +70,29 @@ export default function Features() {
         </div>
 
         {/* BAGIAN TIGA KARTU (GRID SYSTEM) */}
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {featuresData.map((feature, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto pt-6 ">
+          {features.map((item, index) => (
             <div 
               key={index}
-              // Efek kartu gelap transparan dengan border tipis mewah (glassmorphism)
-              className="group relative rounded-2xl border border-white/5 bg-gradient-to-b from-white/[0.02] to-transparent p-8 text-left transition-all duration-300 hover:border-[#e2a862]/30 hover:bg-white/[0.04] shadow-xl"
+              // Efek Premium: Hover naik ke atas + Glow Border tipis khas Linear
+              className="p-8 rounded-2xl border border-white/5 bg-[#0b111e]/30 bg-transparent text-left
+                         transform transition-all duration-500 ease-out hover:-translate-y-2 
+                         hover:border-[#e2a862]/30 hover:shadow-[0_15px_35px_-10px_rgba(226,168,98,0.12)] cursor-pointer group"
             >
-              {/* Ornamen garis atas kecil yang akan menyala emas saat kartu di-hover */}
-              <div className="absolute top-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-[#e2a862]/0 to-transparent group-hover:via-[#e2a862]/40 transition-all duration-500" />
+              {/* 🖥️ CONTAINER GRAFIK ABSTRAK KUSTOM */}
+              <div className="h-12 w-12 rounded-xl bg-[#060910] border border-white/5 flex items-center justify-center mb-6 
+                              group-hover:border-[#e2a862]/20 shadow-inner transition-all duration-300">
+                {item.graphic}
+              </div>
               
-              {/* Judul Kartu */}
-              <h3 className="text-lg font-bold text-white mb-3 group-hover:text-[#e2a862] transition-colors duration-200">
-                {feature.title}
+              {/* JUDUL KARTU */}
+              <h3 className="text-white font-bold text-lg group-hover:text-[#e2a862] transition-colors duration-300">
+                {item.title}
               </h3>
               
-              {/* Isi Deskripsi Kartu */}
-              <p className="text-sm text-gray-400 font-medium leading-relaxed">
-                {feature.description}
+              {/* DESKRIPSI KARTU */}
+              <p className="text-gray-400 text-sm mt-2.5 leading-relaxed font-medium">
+                {item.description}
               </p>
             </div>
           ))}

@@ -62,13 +62,24 @@ export default function Navbar() {
 
           <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-between">
             
-            <div className="flex shrink-0 items-center gap-2">
-              <img src={LogoPzx} alt="PZX Horizon Logo" className="h-8 w-auto" />
+            <a href="#hero" className="flex shrink-0 items-center gap-2 cursor-pointer group">
+  {/* Logo PZX */}
+              <img 
+                src={LogoPzx} 
+                alt="PZX Horizon Logo" 
+                className="h-8 w-auto transition-transform duration-300 group-hover:scale-105" 
+              />
+              
+              {/* Teks Brand */}
               <div className="flex flex-col">
-                <span className="text-sm font-bold tracking-widest text-white leading-none">PZX HORIZON</span>
-                <span className="text-[9px] tracking-wider text-gray-400 font-medium">Coastal Connectivity Specialists</span>
+                <span className="text-sm font-bold tracking-widest text-white leading-none transition-colors duration-300 group-hover:text-[#e2a862]">
+                  PZX HORIZON
+                </span>
+                <span className="text-[9px] tracking-wider text-gray-400 font-medium mt-1">
+                  Coastal Connectivity Specialists
+                </span>
               </div>
-            </div>
+            </a>
 
             {/* Menu Navigasi Desktop (SUDAH OTOMATIS ACTIVE WARNA EMAS) */}
             <div className="hidden sm:ml-6 sm:flex sm:items-center">

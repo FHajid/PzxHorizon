@@ -11,13 +11,59 @@ html {
   pointer-events: none;
 }
 
+/* ==========================================================================
+   🌌 GLOBAL BACKGROUND & SYNCHRONIZED AMBIENT SHINE
+   ========================================================================== */
+body {
+  background: #0E1528; /* Warna dasar asli dikunci aman */
+  color: #ffffff;
+  margin: 0;
+  font-family: sans-serif;
+  position: relative;
+}
+
+/* Lapisan Gradasi Dasar Statis */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(135deg, #050914 0%, #0E1528 50%, #16223E 100%);
+  z-index: -2;
+  pointer-events: none;
+}
+
+/* 🌟 LAPISAN UTAMA BACKGROUND SHINE (IKUT BERKILAU BARENG LOGO) */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  /* Memancarkan aura emas halus dan biru dari arah logo (kanan atas) */
+  background: radial-gradient(circle at 75% 30%, rgba(226, 168, 98, 0.1) 0%, rgba(37, 99, 235, 0.05) 40%, transparent 70%);
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.1;
+  
+  /* Kurva, durasi (5s), dan sifat infinite disamakan persis dengan logo */
+  animation: bgPulsingKinclong 5s cubic-bezier(0.8, 1, 0.8, 0.3) infinite;
+}
+
+/* Timing Kilatan Background: Naik dari 0% ke 15% lalu istirahat di 35% s/id 100% */
+@keyframes bgPulsingKinclong {
+  0% {
+    opacity: 0.1;
+  }
+  15% {
+    opacity: 1; /* Puncak kejayaan kilatan background, pas logo dilewati garis cahaya */
+  }
+  35%, 100% {
+    opacity: 0.1; /* Jeda tenang biar mata user gak pusing */
+  }
+}
+
 
 /* ==========================================================================
-   ANIMASI GLOWING PREMIUM UNTUK LOGO PZX (Taruh di src/App.css)
+   ANIMASI GLOWING PREMIUM UNTUK LOGO PZX
    ========================================================================== */
-
-/* 1. Efek Logo Bernapas & Memancarkan Cahaya Emas */
-/* Kontainer Utama Logo */
 .pzx-logo-container {
   position: relative;
   display: inline-flex;
@@ -25,14 +71,12 @@ html {
   justify-content: center;
 }
 
-/* Logo Dasar PZX dengan Bayangan Pendar Statis */
 .pzx-logo-base {
   filter: drop-shadow(0 0 20px rgba(226, 168, 98, 0.35));
   position: relative;
   z-index: 10;
 }
 
-/* KUNCI UTAMA: Lapisan Kilatan Cahaya yang Terkunci di Dalam Siluet Logo */
 .pzx-logo-overlay {
   position: absolute;
   top: 0;
@@ -42,11 +86,9 @@ html {
   z-index: 20;
   pointer-events: none;
   
-  /* Membaca bentuk asli Logo PZX sebagai topeng (mask) */
   -webkit-mask-image: url('./assets/logo-Pzx.png');
   mask-image: url('./assets/logo-Pzx.png');
   
-  /* Memastikan ukuran topeng pas dengan ukuran box */
   -webkit-mask-size: contain;
   mask-size: contain;
   -webkit-mask-repeat: no-repeat;
@@ -55,7 +97,6 @@ html {
   mask-position: center;
 }
 
-/* Efek Kilatan Garis yang Meluncur di Dalam Topeng */
 .pzx-logo-overlay::after {
   content: '';
   position: absolute;
@@ -64,7 +105,6 @@ html {
   width: 300%;
   height: 300%;
 
-  /* Garis kilatan miring 135 derajat (Putih-Emas Lembut) */
   background: linear-gradient(
     135deg,
     rgba(255, 255, 255, 0) 40%,
@@ -73,14 +113,10 @@ html {
     rgba(255, 255, 255, 0) 60%
   );
 
-  /* Menghaluskan pinggiran garis kilatan biar estetik */
   filter: blur(6px);
-
-  /* Animasi meluncur lambat mewah (durasi 5 detik) */
   animation: meluncurKinclongMurni 5s cubic-bezier(0.8, 1, 0.8, 0.3) infinite;
 }
 
-/* Koordinat pergerakan dari pojok atas kiri ke bawah kanan */
 @keyframes meluncurKinclongMurni {
   0% {
     transform: translate(-25%, -25%);
@@ -88,4 +124,60 @@ html {
   35%, 100% {
     transform: translate(35%, 35%);
   }
+}
+
+/* ==========================================================================
+   ✨ EFFECT CARD JUMPOUT & BREATHING UNTUK COMPONENT COMPARISON
+   ========================================================================== */
+
+@keyframes emasBernapas {
+  0%, 100% {
+    box-shadow: 0 0 25px rgba(226, 168, 98, 0.15);
+    border-color: rgba(226, 168, 98, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 45px rgba(226, 168, 98, 0.35);
+    border-color: rgba(226, 168, 98, 1);
+  }
+}
+
+.pzx-featured-card {
+  animation: emasBernapas 4s ease-in-out infinite;
+}
+
+/* ==========================================================================
+   ✨ LIGHTWEIGHT SHIMMER & GLOW FOR WHYCHOOSE COMPONENT
+   ========================================================================== */
+
+@keyframes textMengecap {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-gold-shine {
+  background-size: 200% auto;
+  animation: textMengecap 4s linear infinite;
+}
+
+/* ==========================================================================
+   🔬 STAGGERED FADE-IN & SPOTLIGHT FOR PRODUCT SPECS
+   ========================================================================== */
+
+@keyframes specsMuncul {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+.animate-fade-in-up {
+  opacity: 0; /* Mencegah kedipan sebelum animasi jalan */
+  animation: specsMuncul 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }

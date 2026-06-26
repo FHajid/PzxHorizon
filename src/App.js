@@ -13,11 +13,11 @@ import OurBrand from './components/brand.js';
 
 function App() {
   return (
-    <div className="App">
+    /* 🌐 Di sini kita buat transparent agar background animasi dari App.css tembus sempurna */
+    <div className="min-h-screen text-white antialiased">
       <Navbar /> 
 
       <main>
-
         <Hero /> 
         <Features />
         <Comparison />
@@ -29,7 +29,6 @@ function App() {
         <Contact />
         
         <Footer />
-
       </main>
     </div>
   );

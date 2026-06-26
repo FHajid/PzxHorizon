@@ -10,7 +10,7 @@ export default function SystemSpecs() {
   ];
 
   return (
-    <section className="relative py-20 lg:py-28 border-t border-white/5 bg-[#0E1528]">
+    <section className="relative py-20 lg:py-28 border-t border-white/5 bg-transparent">
       {/* Efek cahaya ambient di sudut kanan atas */}
       <div className="absolute top-0 right-1/4 -z-10 h-[300px] w-[300px] rounded-full bg-[#e2a862]/5 blur-[100px]" />
 

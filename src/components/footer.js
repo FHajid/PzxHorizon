@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Footer() {
   return (
-    <section className="relative pt-12 pb-8 bg-[#0E1528]">
+    <section className="relative pt-12 pb-8 bg-transparent">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         
        
