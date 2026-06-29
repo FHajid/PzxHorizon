@@ -71,7 +71,7 @@ export default function Features() {
 
         {/* BAGIAN TIGA KARTU (GRID SYSTEM) */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto pt-6 ">
-          {features.map((item, index) => (
+          {features.map((item, index) => ( 
             <div 
               key={index}
               // Efek Premium: Hover naik ke atas + Glow Border tipis khas Linear
